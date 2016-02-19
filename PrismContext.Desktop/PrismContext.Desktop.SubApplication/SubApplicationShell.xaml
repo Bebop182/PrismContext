@@ -1,0 +1,10 @@
+﻿<Window x:Class="PrismContext.Desktop.SubApplication.SubApplicationShell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:subApplication="clr-namespace:PrismContext.Desktop.SubApplication"
+        Title="MainWindow" Height="350" Width="525"
+        BorderBrush="Red" BorderThickness="2">
+    <Grid>
+        <subApplication:ShellTemplate />
+    </Grid>
+</Window>

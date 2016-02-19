@@ -1,0 +1,18 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:PrismContext.ControlLibrary.Converters"
+    xmlns:local="clr-namespace:PrismContext.ControlLibrary.CustomPanels">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary>
+            <converters:InvertOrientationConverter x:Key="InvertOrientationConverter" />
+        </ResourceDictionary>
+        
+        <ResourceDictionary Source="/PrismContext.ControlLibrary;component/Styles/Matrix.xaml" />
+        <ResourceDictionary Source="/PrismContext.ControlLibrary;component/Styles/MatrixItem.xaml" />
+        <ResourceDictionary Source="/PrismContext.ControlLibrary;component/Styles/OrganizationTree.xaml" />
+        <ResourceDictionary Source="/PrismContext.ControlLibrary;component/Styles/OrganizationTreeItem.xaml" />
+        
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

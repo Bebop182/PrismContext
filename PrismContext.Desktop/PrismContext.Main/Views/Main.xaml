@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="PrismContext.Desktop.Main.Views.Main"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ab="clr-namespace:PrismContext.ControlLibrary.AttachedBehaviours;assembly=PrismContext.ControlLibrary"
+             xmlns:ad="clr-namespace:PrismContext.ControlLibrary.Adorners;assembly=PrismContext.ControlLibrary"
+             xmlns:p="clr-namespace:PrismContext.ControlLibrary.CustomPanels;assembly=PrismContext.ControlLibrary"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <ad:AutoAdornerPreset x:Key="AutoAdornerPreset" ShowAnchorLink="False"
+                                        ContentOffsetX="-200" ContentOffsetY="50"
+                                        AdornedAnchorPoint="TopRight" ContentAnchorPoint="TopRight"
+                                        ContentAnchorOffsetX="-40" ContentAnchorOffsetY="20">
+                <ad:AutoAdornerPreset.Template>
+                    <DataTemplate>
+                        <Border BorderBrush="Black" BorderThickness="2" Background="Transparent" Padding="5" CornerRadius="2">
+                            <TextBlock FontFamily="Verdana" FontWeight="Bold" Text="Adorned text preset"></TextBlock>
+                        </Border>
+                    </DataTemplate>
+                </ad:AutoAdornerPreset.Template>
+            </ad:AutoAdornerPreset>
+        </Grid.Resources>
+        
+        <ListBox Background="White" ItemsSource="{DynamicResource DataList}"
+                 ad:AutoAdorner.AutoAdornerPreset="{StaticResource AutoAdornerPreset}"
+                 ad:AutoAdorner.IsContentVisible="False" ad:AutoAdorner.ShowAnchorLink="True">
+            <ListBox.Resources>
+                <x:Array x:Key="DataList" Type="sys:String">
+                    <sys:String>Item 1</sys:String>
+                    <sys:String>Item 2</sys:String>
+                    <sys:String>Item 3</sys:String>
+                    <sys:String>Item 4</sys:String>
+                    <sys:String>Item 5</sys:String>
+                    <sys:String>Item 6</sys:String>
+                    <sys:String>Item 7</sys:String>
+                    <sys:String>Item 8</sys:String>
+                    <sys:String>Item 9</sys:String>
+                    <sys:String>Item 10</sys:String>
+                </x:Array>
+            </ListBox.Resources>
+            
+            <i:Interaction.Behaviors>
+                <ab:CarouselBehavior />
+            </i:Interaction.Behaviors>
+            
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <p:OverlapPanel Orientation="Diagonal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" Background="PowderBlue" Padding="5">
+                        <TextBlock Text="{Binding}" />
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

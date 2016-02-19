@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="PrismContext.Desktop.Main.MainModuleShell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="640">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <!--TOP REGION-->
+        <Border Grid.ColumnSpan="3">
+            <ContentControl prism:RegionManager.RegionName="Top" />
+        </Border>
+        
+        <!--LEFT REGION-->
+        <Border Grid.Row="1" Grid.Column="0">
+            <ContentControl prism:RegionManager.RegionName="Left"></ContentControl>
+        </Border>
+        
+        <!--CENTER REGION-->
+        <Border Grid.Row="1" Grid.Column="1">
+            <ContentControl prism:RegionManager.RegionName="Center"></ContentControl>
+        </Border>
+        
+        <!--RIGHT REGION-->
+        <Border Grid.Row="1" Grid.Column="2">
+            <ContentControl prism:RegionManager.RegionName="Right"></ContentControl>
+        </Border>
+    </Grid>
+</UserControl>
